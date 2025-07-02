@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="9" passed="7" failed="1" skipped="1">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-07-03T02:13:38 IST" name="Suite" finished-at="2025-07-03T02:14:27 IST" duration-ms="49149">
+    <groups>
+    </groups>
+    <test started-at="2025-07-03T02:13:38 IST" name="firefoxTest" finished-at="2025-07-03T02:14:04 IST" duration-ms="25726">
+      <class name="tests.TC001_Homepage_CategoryVerification">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.TC001_Homepage_CategoryVerification@177bea38]" started-at="2025-07-03T02:13:38 IST" name="setup" finished-at="2025-07-03T02:13:49 IST" duration-ms="10428" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="print_mainCategory_names()[pri:1, instance:tests.TC001_Homepage_CategoryVerification@177bea38]" started-at="2025-07-03T02:13:49 IST" name="print_mainCategory_names" finished-at="2025-07-03T02:13:49 IST" duration-ms="314" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- print_mainCategory_names -->
+        <test-method signature="navigate_randomCategory()[pri:2, instance:tests.TC001_Homepage_CategoryVerification@177bea38]" started-at="2025-07-03T02:13:49 IST" name="navigate_randomCategory" finished-at="2025-07-03T02:14:02 IST" duration-ms="12953" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[No subcategories available to click. Screenshot Saved. Exception: Expected condition failed: waiting for visibility of [[[[FirefoxDriver: firefox on windows (1bf64d74-58fb-4175-9e7d-5c5da55624e1)] -> xpath: //ul[@class='nav-pills categorymenu']/li[a[contains(@href,'product/category')]]]] -> xpath: .//div[contains(@class,'subcategories')]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 21824, moz:profile: C:\Users\ARUN\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 1bf64d74-58fb-4175-9e7d-5c5da55624e1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: No subcategories available to click. Screenshot Saved. Exception: Expected condition failed: waiting for visibility of [[[[FirefoxDriver: firefox on windows (1bf64d74-58fb-4175-9e7d-5c5da55624e1)] -> xpath: //ul[@class='nav-pills categorymenu']/li[a[contains(@href,'product/category')]]]] -> xpath: .//div[contains(@class,'subcategories')]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 21824, moz:profile: C:\Users\ARUN\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 1bf64d74-58fb-4175-9e7d-5c5da55624e1
+at org.testng.Assert.fail(Assert.java:111)
+at tests.TC001_Homepage_CategoryVerification.navigate_randomCategory(TC001_Homepage_CategoryVerification.java:32)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate_randomCategory -->
+        <test-method signature="verifyProductCount()[pri:3, instance:tests.TC001_Homepage_CategoryVerification@177bea38]" started-at="2025-07-03T02:14:02 IST" name="verifyProductCount" finished-at="2025-07-03T02:14:02 IST" depends-on-methods="tests.TC001_Homepage_CategoryVerification.navigate_randomCategory" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method tests.TC001_Homepage_CategoryVerification.verifyProductCount() on instance tests.TC001_Homepage_CategoryVerification@177bea38 depends on not successfully finished methods 
+[tests.TC001_Homepage_CategoryVerification.navigate_randomCategory() on instance tests.TC001_Homepage_CategoryVerification@177bea38]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method tests.TC001_Homepage_CategoryVerification.verifyProductCount() on instance tests.TC001_Homepage_CategoryVerification@177bea38 depends on not successfully finished methods 
+[tests.TC001_Homepage_CategoryVerification.navigate_randomCategory() on instance tests.TC001_Homepage_CategoryVerification@177bea38]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductCount -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.TC001_Homepage_CategoryVerification@177bea38]" started-at="2025-07-03T02:14:02 IST" name="teardown" finished-at="2025-07-03T02:14:04 IST" duration-ms="1894" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.TC001_Homepage_CategoryVerification -->
+    </test> <!-- firefoxTest -->
+    <test started-at="2025-07-03T02:14:04 IST" name="chromeTest" finished-at="2025-07-03T02:14:16 IST" duration-ms="11778">
+      <class name="tests.TC001_Homepage_CategoryVerification">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.TC001_Homepage_CategoryVerification@6fb365ed]" started-at="2025-07-03T02:14:04 IST" name="setup" finished-at="2025-07-03T02:14:10 IST" duration-ms="6400" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="print_mainCategory_names()[pri:1, instance:tests.TC001_Homepage_CategoryVerification@6fb365ed]" started-at="2025-07-03T02:14:10 IST" name="print_mainCategory_names" finished-at="2025-07-03T02:14:11 IST" duration-ms="284" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- print_mainCategory_names -->
+        <test-method signature="navigate_randomCategory()[pri:2, instance:tests.TC001_Homepage_CategoryVerification@6fb365ed]" started-at="2025-07-03T02:14:11 IST" name="navigate_randomCategory" finished-at="2025-07-03T02:14:15 IST" duration-ms="4204" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate_randomCategory -->
+        <test-method signature="verifyProductCount()[pri:3, instance:tests.TC001_Homepage_CategoryVerification@6fb365ed]" started-at="2025-07-03T02:14:15 IST" name="verifyProductCount" finished-at="2025-07-03T02:14:15 IST" depends-on-methods="tests.TC001_Homepage_CategoryVerification.navigate_randomCategory" duration-ms="71" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductCount -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.TC001_Homepage_CategoryVerification@6fb365ed]" started-at="2025-07-03T02:14:15 IST" name="teardown" finished-at="2025-07-03T02:14:16 IST" duration-ms="792" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.TC001_Homepage_CategoryVerification -->
+    </test> <!-- chromeTest -->
+    <test started-at="2025-07-03T02:14:16 IST" name="edgeTest" finished-at="2025-07-03T02:14:27 IST" duration-ms="11557">
+      <class name="tests.TC001_Homepage_CategoryVerification">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.TC001_Homepage_CategoryVerification@16414e40]" started-at="2025-07-03T02:14:16 IST" name="setup" finished-at="2025-07-03T02:14:20 IST" duration-ms="4790" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="print_mainCategory_names()[pri:1, instance:tests.TC001_Homepage_CategoryVerification@16414e40]" started-at="2025-07-03T02:14:20 IST" name="print_mainCategory_names" finished-at="2025-07-03T02:14:21 IST" duration-ms="227" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- print_mainCategory_names -->
+        <test-method signature="navigate_randomCategory()[pri:2, instance:tests.TC001_Homepage_CategoryVerification@16414e40]" started-at="2025-07-03T02:14:21 IST" name="navigate_randomCategory" finished-at="2025-07-03T02:14:27 IST" duration-ms="6164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate_randomCategory -->
+        <test-method signature="verifyProductCount()[pri:3, instance:tests.TC001_Homepage_CategoryVerification@16414e40]" started-at="2025-07-03T02:14:27 IST" name="verifyProductCount" finished-at="2025-07-03T02:14:27 IST" depends-on-methods="tests.TC001_Homepage_CategoryVerification.navigate_randomCategory" duration-ms="45" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductCount -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.TC001_Homepage_CategoryVerification@16414e40]" started-at="2025-07-03T02:14:27 IST" name="teardown" finished-at="2025-07-03T02:14:27 IST" duration-ms="304" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.TC001_Homepage_CategoryVerification -->
+    </test> <!-- edgeTest -->
+  </suite> <!-- Suite -->
+</testng-results>
