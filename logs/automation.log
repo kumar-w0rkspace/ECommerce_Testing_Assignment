@@ -28,3 +28,34 @@ Session ID: 1bf64d74-58fb-4175-9e7d-5c5da55624e1 <<
 02:14:27.399 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Verifying product count is over three ***
 02:14:27.440 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Products displayed: 4 ***
 02:14:27.444 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Ending Test ***
+02:26:39.571 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Project Files\GitHub Eclipse WorkSpace\ECommerce_Testing_Assignment\SequentialTesting.xml
+
+02:26:50.365 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Starting Test ***
+02:26:50.423 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Printing Main menu items ***
+02:26:50.669 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Categories found:   APPAREL & ACCESSORIES,   MAKEUP,   SKINCARE,   FRAGRANCE,   MEN,   HAIR CARE,   BOOKS ***
+02:26:50.682 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Navigating to Random sub category ***
+02:27:03.619 [main] ERROR tests.TC001_Homepage_CategoryVerification - >> Navigation failed: Expected condition failed: waiting for visibility of [[[[FirefoxDriver: firefox on windows (676a706b-7135-4ec8-b50f-5908548b60fb)] -> xpath: //ul[@class='nav-pills categorymenu']/li[a[contains(@href,'product/category')]]]] -> xpath: .//div[contains(@class,'subcategories')]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 22388, moz:profile: C:\Users\ARUN\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 676a706b-7135-4ec8-b50f-5908548b60fb <<
+02:27:03.663 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Ending Test ***
+02:27:13.356 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Starting Test ***
+02:27:13.363 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Printing Main menu items ***
+02:27:13.643 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Categories found:   APPAREL & ACCESSORIES,   MAKEUP,   SKINCARE,   FRAGRANCE,   MEN,   HAIR CARE,   BOOKS ***
+02:27:13.657 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Navigating to Random sub category ***
+02:27:17.576 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Successfully navigated to subcategory ***
+02:27:17.598 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Verifying product count is over three ***
+02:27:17.632 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Products displayed: 1 ***
+02:27:18.010 [main] ERROR tests.TC001_Homepage_CategoryVerification - >> Product count verification failed: Product count is less than three. Found: 1 expected [true] but found [false] <<
+02:27:18.016 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Ending Test ***
+02:27:24.855 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Starting Test ***
+02:27:24.860 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Printing Main menu items ***
+02:27:25.071 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Categories found:   APPAREL & ACCESSORIES,   MAKEUP,   SKINCARE,   FRAGRANCE,   MEN,   HAIR CARE,   BOOKS ***
+02:27:25.078 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Navigating to Random sub category ***
+02:27:28.849 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Successfully navigated to subcategory ***
+02:27:28.858 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Verifying product count is over three ***
+02:27:28.895 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Products displayed: 6 ***
+02:27:28.899 [main] INFO  tests.TC001_Homepage_CategoryVerification - *** Ending Test ***

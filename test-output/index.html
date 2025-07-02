@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">9 methods, 1 failed,  1 skipped,  7 passed</span>
+                    <span class="method-stats">9 methods, 2 failed,  1 skipped,  6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -104,6 +104,11 @@
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="tests.TC001_Homepage_CategoryVerification" class="method navigator-link" hash-for-method="navigate_randomCategory">navigate_randomCategory</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="tests.TC001_Homepage_CategoryVerification" class="method navigator-link" hash-for-method="verifyProductCount">verifyProductCount</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -159,11 +164,6 @@
                         <a href="#" panel-name="suite-Suite" title="tests.TC001_Homepage_CategoryVerification" class="method navigator-link" hash-for-method="verifyProductCount">verifyProductCount</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.TC001_Homepage_CategoryVerification" class="method navigator-link" hash-for-method="verifyProductCount">verifyProductCount</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
@@ -187,13 +187,25 @@
                   <a name="navigate_randomCategory">
                   </a> <!-- navigate_randomCategory -->
                   <span class="method-name">navigate_randomCategory</span>
-                  <div class="stack-trace">java.lang.AssertionError: No subcategories available to click. Screenshot Saved. Exception: Expected condition failed: waiting for visibility of [[[[FirefoxDriver: firefox on windows (1bf64d74-58fb-4175-9e7d-5c5da55624e1)] -&gt; xpath: //ul[@class=&apos;nav-pills categorymenu&apos;]/li[a[contains(@href,&apos;product/category&apos;)]]]] -&gt; xpath: .//div[contains(@class,&apos;subcategories&apos;)]] (tried for 10 second(s) with 500 milliseconds interval)
+                  <div class="stack-trace">java.lang.AssertionError: No subcategories available to click. Screenshot Saved. Expected condition failed: waiting for visibility of [[[[FirefoxDriver: firefox on windows (676a706b-7135-4ec8-b50f-5908548b60fb)] -&gt; xpath: //ul[@class=&apos;nav-pills categorymenu&apos;]/li[a[contains(@href,&apos;product/category&apos;)]]]] -&gt; xpath: .//div[contains(@class,&apos;subcategories&apos;)]] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 21824, moz:profile: C:\Users\ARUN\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 1bf64d74-58fb-4175-9e7d-5c5da55624e1
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 22388, moz:profile: C:\Users\ARUN\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 676a706b-7135-4ec8-b50f-5908548b60fb
 	at tests.TC001_Homepage_CategoryVerification.navigate_randomCategory(TC001_Homepage_CategoryVerification.java:32)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 26 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyProductCount">
+                  </a> <!-- verifyProductCount -->
+                  <span class="method-name">verifyProductCount</span>
+                  <div class="stack-trace">java.lang.AssertionError: Verification failed. Screenshot saved
+	at tests.TC001_Homepage_CategoryVerification.verifyProductCount(TC001_Homepage_CategoryVerification.java:47)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 26 stack frames
 </div> <!-- stack-trace -->
@@ -212,8 +224,8 @@ Session ID: 1bf64d74-58fb-4175-9e7d-5c5da55624e1
                   <a name="verifyProductCount">
                   </a> <!-- verifyProductCount -->
                   <span class="method-name">verifyProductCount</span>
-                  <div class="stack-trace">java.lang.Throwable: Method tests.TC001_Homepage_CategoryVerification.verifyProductCount() on instance tests.TC001_Homepage_CategoryVerification@177bea38 depends on not successfully finished methods 
-[tests.TC001_Homepage_CategoryVerification.navigate_randomCategory() on instance tests.TC001_Homepage_CategoryVerification@177bea38]
+                  <div class="stack-trace">java.lang.Throwable: Method tests.TC001_Homepage_CategoryVerification.verifyProductCount() on instance tests.TC001_Homepage_CategoryVerification@7f132176 depends on not successfully finished methods 
+[tests.TC001_Homepage_CategoryVerification.navigate_randomCategory() on instance tests.TC001_Homepage_CategoryVerification@7f132176]
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 18 stack frames
 </div> <!-- stack-trace -->
@@ -260,13 +272,6 @@ Session ID: 1bf64d74-58fb-4175-9e7d-5c5da55624e1
                   <a name="print_mainCategory_names">
                   </a> <!-- print_mainCategory_names -->
                   <span class="method-name">print_mainCategory_names</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyProductCount">
-                  </a> <!-- verifyProductCount -->
-                  <span class="method-name">verifyProductCount</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -357,31 +362,31 @@ data.setCell(0, 3, 12953);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'navigate_randomCategory')
 data.setCell(1, 2, 'tests.TC001_Homepage_CategoryVerification')
-data.setCell(1, 3, 6164);
+data.setCell(1, 3, 3923);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'navigate_randomCategory')
 data.setCell(2, 2, 'tests.TC001_Homepage_CategoryVerification')
-data.setCell(2, 3, 4204);
+data.setCell(2, 3, 3774);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'print_mainCategory_names')
+data.setCell(3, 1, 'verifyProductCount')
 data.setCell(3, 2, 'tests.TC001_Homepage_CategoryVerification')
-data.setCell(3, 3, 314);
+data.setCell(3, 3, 415);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'print_mainCategory_names')
 data.setCell(4, 2, 'tests.TC001_Homepage_CategoryVerification')
-data.setCell(4, 3, 284);
+data.setCell(4, 3, 285);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'print_mainCategory_names')
 data.setCell(5, 2, 'tests.TC001_Homepage_CategoryVerification')
-data.setCell(5, 3, 227);
+data.setCell(5, 3, 282);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'verifyProductCount')
+data.setCell(6, 1, 'print_mainCategory_names')
 data.setCell(6, 2, 'tests.TC001_Homepage_CategoryVerification')
-data.setCell(6, 3, 71);
+data.setCell(6, 3, 214);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'verifyProductCount')
 data.setCell(7, 2, 'tests.TC001_Homepage_CategoryVerification')
-data.setCell(7, 3, 45);
+data.setCell(7, 3, 41);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'verifyProductCount')
 data.setCell(8, 2, 'tests.TC001_Homepage_CategoryVerification')
@@ -390,7 +395,7 @@ window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 24 seconds</span>
+              <span class="suite-total-time">Total running time: 21 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -423,57 +428,59 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">print_mainCategory_names</span>
-                <span class="method-start">10476 ms</span>
+                <span class="method-start">10724 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">navigate_randomCategory</span>
-                <span class="method-start">10800 ms</span>
+                <span class="method-start">11015 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">23777 ms</span>
+                <span class="method-start">23999 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class before">
                 <span class="method-name">setup(chrome)</span>
-                <span class="method-start">25749 ms</span>
+                <span class="method-start">25988 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">print_mainCategory_names</span>
-                <span class="method-start">32155 ms</span>
+                <span class="method-start">33696 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">navigate_randomCategory</span>
-                <span class="method-start">32446 ms</span>
+                <span class="method-start">33990 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">verifyProductCount</span>
-                <span class="method-start">36658 ms</span>
+                <span class="method-start">37932 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">36732 ms</span>
+                <span class="method-start">38352 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class before">
                 <span class="method-name">setup(edge)</span>
-                <span class="method-start">37544 ms</span>
+                <span class="method-start">38995 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">print_mainCategory_names</span>
-                <span class="method-start">42336 ms</span>
+                <span class="method-start">45194 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">navigate_randomCategory</span>
-                <span class="method-start">42568 ms</span>
+                <span class="method-start">45413 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyProductCount</span>
-                <span class="method-start">48743 ms</span>
+                <span class="method-start">49192 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">48790 ms</span>
+                <span class="method-start">49236 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
