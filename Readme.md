@@ -27,15 +27,13 @@ This is a Selenium-based test automation framework built using **Java**, **TestN
 
 
 ## 🗂️ Project Structure
----
-
+```
 src/test/java/
 ├── base/ # Setup, teardown logic
 ├── pages/ # Page classes using Page Object Model
 ├── tests/ # TestNG test cases
 ├── utils/ # Helper classes (screenshot, waits, etc.)
-
----
+```
 
 ## 🚀 How to Run
 
