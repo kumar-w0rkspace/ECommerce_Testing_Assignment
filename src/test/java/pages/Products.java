@@ -1,13 +1,15 @@
 package pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ProductPage extends BasePage {
+public class Products extends Base {
 
-	public ProductPage(WebDriver driver) {
+	public Products(WebDriver driver) {
 		super(driver);
 	}
 
@@ -16,7 +18,7 @@ public class ProductPage extends BasePage {
 	@FindBy(xpath = "//div[@class='productfilneprice']")
 	WebElement string_price;
 	@FindBy(xpath = "//ul[@class='productinfo']/li[span[text()='Availability:']]")
-	WebElement string_availability;
+	List<WebElement> string_availability;
 	@FindBy(xpath = "//a[@class='cart']")
 	WebElement btn_cart;
 
@@ -31,7 +33,11 @@ public class ProductPage extends BasePage {
 	}
 
 	public String getQuantity() {
-		String availabilityText = string_availability.getText().trim().toLowerCase();
+		if (string_availability == null || string_availability.isEmpty()) {
+			return "Availability info not listed";
+		}
+
+		String availabilityText = string_availability.get(0).getText().trim().toLowerCase();
 
 		if (availabilityText.isEmpty()) {
 			return "Availability info not listed";

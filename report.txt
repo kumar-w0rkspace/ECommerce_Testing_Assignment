@@ -1,4 +1,11 @@
 Product added
+Name: Euphoria Men Intense Eau De Toilette Spray
+Price: $44.10
+Stock: 993578
+URL: https://automationteststore.com/index.php?rt=product/product&path=58_59&product_id=86
+
+
+Product added
 Name: Flash Bronzer Body Gel
 Price: $29.00
 Stock: 9885349
@@ -6,17 +13,38 @@ URL: https://automationteststore.com/index.php?rt=product/product&path=43_44&pro
 
 
 Product added
-Name: Obsession Night Perfume
-Price: $39.00
-Stock: Available but stock count not mentioned
-URL: https://automationteststore.com/index.php?rt=product/product&path=58_59&product_id=90
+Name: Shaving cream
+Price: $98.00
+Stock: 9884760
+URL: https://automationteststore.com/index.php?rt=product/product&path=58_61&product_id=98
 
 
 Product added
-Name: Armani Code Pour Femme
-Price: $30.00
-Stock: Available but stock count not mentioned
-URL: https://automationteststore.com/index.php?rt=product/product&path=49_50&product_id=84
+Name: New French With Ease (1 book + 1 mp3 CD)
+Price: $85.00
+Stock: 9885808
+URL: https://automationteststore.com/index.php?rt=product/product&path=65_66&product_id=111
+
+
+Product added
+Name: Absolute Anti-Age Spot Replenishing Unifying TreatmentSPF 15
+Price: $42.00
+Stock: 9765693
+URL: https://automationteststore.com/index.php?rt=product/product&path=43_48&product_id=68
+
+
+Product added
+Name: New French With Ease (1 book + 1 mp3 CD)
+Price: $85.00
+Stock: 9885808
+URL: https://automationteststore.com/index.php?rt=product/product&path=65_66&product_id=111
+
+
+Product added
+Name: New French With Ease (1 book + 1 mp3 CD)
+Price: $85.00
+Stock: 9885808
+URL: https://automationteststore.com/index.php?rt=product/product&path=65_66&product_id=111
 
 
 Product added
@@ -26,17 +54,24 @@ Stock: Available but stock count not mentioned
 URL: https://automationteststore.com/index.php?rt=product/product&path=68_69&product_id=117
 
 
-SKIPPED - Cart Button Not Visible
-Name  : L'EXTRÊME Instant Extensions Lengthening Mascara
-Price : $25.00
-Stock : 1983
-URL   : https://automationteststore.com/index.php?rt=product/product&path=36_39&product_id=54
+Product added
+Name: Casual 3/4 Sleeve Baseball T-Shirt
+Price: $14.00
+Stock: 10
+URL: https://automationteststore.com/index.php?rt=product/product&path=68_70&product_id=123
 
 
 Product added
-Name: The Miracle Morning: The Not-So-Obvious Secret Guaranteed to Transform Your Life
-Price: $16.20
-Stock: 9885860
-URL: https://automationteststore.com/index.php?rt=product/product&path=65_67&product_id=112
+Name: New French With Ease (1 book + 1 mp3 CD)
+Price: $85.00
+Stock: 9885808
+URL: https://automationteststore.com/index.php?rt=product/product&path=65_66&product_id=111
+
+
+Product added
+Name: Flash Bronzer Body Gel
+Price: $29.00
+Stock: 9885349
+URL: https://automationteststore.com/index.php?rt=product/product&path=43_44&product_id=67
 
 

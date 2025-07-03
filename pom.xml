@@ -20,11 +20,18 @@
 	    <scope>test</scope>
 	</dependency>
 	
-		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-csv -->
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 	<dependency>
-	    <groupId>org.apache.commons</groupId>
-	    <artifactId>commons-csv</artifactId>
-	    <version>1.14.0</version>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.19.0</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+	<dependency>
+	    <groupId>com.opencsv</groupId>
+	    <artifactId>opencsv</artifactId>
+	    <version>5.11.2</version>
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->

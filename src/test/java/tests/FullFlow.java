@@ -1,21 +1,31 @@
 package tests;
 
 import java.util.List;
+import java.util.Map;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import pages.CartPage;
-import pages.HomePage;
-import pages.ProductPage;
+import com.opencsv.exceptions.CsvValidationException;
+
+import pages.AccountLogin;
+import pages.Cart;
+import pages.CheckOut;
+import pages.Home;
+import pages.Products;
+import pages.Registration;
+import utils.CSVReaderUtility;
 import utils.ReportUtils;
 
 public class FullFlow extends BaseClass {
-	HomePage homePage;
-	ProductPage productPage;
-	CartPage cartpage;
+	Home homePage;
+	Products productPage;
+	Cart cartpage;
+	CheckOut checkOut;
+	AccountLogin accLogin;
+	Registration reg;
 	SoftAssert myAssert;
 
 	@BeforeMethod
@@ -26,20 +36,22 @@ public class FullFlow extends BaseClass {
 	@Test(priority = 1)
 	public void print_mainCategory_names() {
 		log.info("*** Printing Main menu items ***");
-		homePage = new HomePage(driver);
+		homePage = new Home(driver);
 		List<String> text = homePage.getElementText();
 		log.info("*** Categories found: " + String.join(", ", text) + " ***");
 	}
 
 	@Test(priority = 2)
 	public void randomCategoryNavigation() {
-		homePage = new HomePage(driver);
+		log.info("*** Navigating to Random Category ***");
+		homePage = new Home(driver);
 		homePage.clickProdCategory();
 		homePage.clickSubCategory();
 	}
 
 	public void verifyProductVisibility() {
-		homePage = new HomePage(driver);
+		log.info("*** Veryfing if three products are visible ***");
+		homePage = new Home(driver);
 		int productCount = homePage.countProducts();
 		if (productCount >= 3) {
 			log.info("*** Category has " + productCount + " products ***");
@@ -53,9 +65,9 @@ public class FullFlow extends BaseClass {
 
 	@Test(priority = 4)
 	public void randomItemToCart() {
-		homePage = new HomePage(driver);
-		productPage = new ProductPage(driver);
 		log.info("*** Adding two items to cart ***");
+		homePage = new Home(driver);
+		productPage = new Products(driver);
 		int addedCount = 0;
 		int maxAttempts = 5;
 		int attempts = 0;
@@ -69,26 +81,15 @@ public class FullFlow extends BaseClass {
 				String stock = productPage.getQuantity();
 				String url = productPage.getUrl();
 				boolean cartVisible = productPage.cartButtonVisiblity();
-
-				log.info("*** Product Name : " + name + " ***");
-				log.info("*** Product Price : " + price + " ***");
-				log.info("*** Available Stock : " + stock + " ***");
-				log.info("*** Product URL : " + url + " ***");
-
 				if (stock.equalsIgnoreCase("Out of Stock") || stock.equalsIgnoreCase("Availability info not listed")) {
-
-					log.warn("Product not added to cart - Reason: " + stock);
-
+					log.warn(">>> Product not added to cart - Reason: " + stock + " <<<");
 				} else if (!cartVisible) {
-
-					log.warn("Product not added - Reason: Add to Cart button not visible or not enabled");
+					log.warn(">>> Product not added - Reason: Add to Cart button not visible or not enabled <<<");
 					ReportUtils.writeToReport("SKIPPED - Cart Button Not Visible\n" + "Name  : " + name + "\n"
 							+ "Price : " + price + "\n" + "Stock : " + stock + "\n" + "URL   : " + url + "\n\n");
-
 				} else {
 					productPage.clickCartButton();
 					addedCount++;
-
 					log.info("*** " + name + " Added to cart successfully ***");
 					ReportUtils.writeToReport("Product added\nName: " + name + "\nPrice: " + price + "\nStock: " + stock
 							+ "\nURL: " + url + "\n\n");
@@ -115,9 +116,33 @@ public class FullFlow extends BaseClass {
 
 	@Test(priority = 5, dependsOnMethods = { "randomItemToCart" })
 	public void validateCartCounter() {
-		cartpage = new CartPage(driver);
+		log.info("*** Validating cart has 2 items ***");
+		cartpage = new Cart(driver);
 		int itemCount = cartpage.getCartItemCount();
 		log.info("*** Cart contains " + (itemCount - 1) + " items ***");
 		Assert.assertEquals(itemCount >= 3, true, "Less than 2 items in inventory");
+	}
+
+	@Test(priority = 6, dependsOnMethods = { "randomItemToCart" })
+	public void validateCartTotal() {
+		log.info("*** Validating cart total ***");
+		checkOut = new CheckOut(driver);
+		Assert.assertEquals(checkOut.getTotalPrice(), true, "Price Mismatch");
+	}
+
+	@Test(priority = 7, dependsOnMethods = { "validateCartTotal" })
+	public void clickOnCheckOut() {
+		checkOut = new CheckOut(driver);
+		accLogin = new AccountLogin(driver);
+		checkOut.clickCheckOut();
+		accLogin.createNewAccount();
+	}
+
+	@Test(priority = 8, dependsOnMethods = { "clickOnCheckOut" })
+	public void fillRegistrationForm() throws CsvValidationException {
+		Map<String, String> userData = CSVReaderUtility.readSingleUser("testdata.csv");
+		reg = new Registration(driver);
+		reg.fillRegistrationForm(userData);
+
 	}
 }

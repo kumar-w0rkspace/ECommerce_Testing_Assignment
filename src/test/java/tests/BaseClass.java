@@ -61,7 +61,7 @@ public class BaseClass {
 	@AfterClass
 	public void teardown() {
 		log.info("*** Ending Test ***");
-		driver.close();
+		//driver.close();
 	}
 
 }
