@@ -21,7 +21,7 @@ public class BaseClass {
 
 	public WebDriver driver;
 	public Properties property;
-	public Logger log;
+	public static Logger log;
 
 	@BeforeClass
 	@Parameters({ "browser" })

@@ -1,8 +1,10 @@
 package pages;
 
 import java.time.Duration;
+import java.util.List;
+import java.util.Random;
 
-import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -11,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 	WebDriver driver;
-	WebDriverWait myWait;
+	static WebDriverWait myWait;
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
@@ -19,29 +21,19 @@ public class BasePage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void visibilityWait(WebElement element) {
-		myWait.until(ExpectedConditions.visibilityOf(element));
-	}
-
-	public void clickabilityWait(WebElement element) {
-		myWait.until(ExpectedConditions.elementToBeClickable(element));
-	}
-
-	public void retrying(WebElement element, int maxAttempts) {
-		int attempts = 0;
-		while (attempts < maxAttempts) {
-			try {
-				visibilityWait(element);
-				element.click();
-				return;
-			} catch (StaleElementReferenceException e) {
-				attempts++;
-				if (attempts == maxAttempts) {
-					throw new RuntimeException(
-							"Failed to click element after " + maxAttempts + " retries due to staleness.");
-				}
-			}
+	public void waitThenClickRandom(List<WebElement> elements, WebDriver driver) {
+		
+		if (elements == null || elements.isEmpty()) {
+			throw new RuntimeException("No elements found to click.");
 		}
+		Random rand = new Random();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		int index = rand.nextInt(elements.size());
+		WebElement elementToClick = elements.get(index);
+		js.executeScript("arguments[0].scrollIntoView(true);", elementToClick);
+		wait.until(ExpectedConditions.elementToBeClickable(elementToClick)).click();
 	}
 
 }

@@ -1,0 +1,42 @@
+Product added
+Name: Flash Bronzer Body Gel
+Price: $29.00
+Stock: 9885349
+URL: https://automationteststore.com/index.php?rt=product/product&path=43_44&product_id=67
+
+
+Product added
+Name: Obsession Night Perfume
+Price: $39.00
+Stock: Available but stock count not mentioned
+URL: https://automationteststore.com/index.php?rt=product/product&path=58_59&product_id=90
+
+
+Product added
+Name: Armani Code Pour Femme
+Price: $30.00
+Stock: Available but stock count not mentioned
+URL: https://automationteststore.com/index.php?rt=product/product&path=49_50&product_id=84
+
+
+Product added
+Name: Ruby Shoo Womens Jada T-Bar
+Price: $78.00
+Stock: Available but stock count not mentioned
+URL: https://automationteststore.com/index.php?rt=product/product&path=68_69&product_id=117
+
+
+SKIPPED - Cart Button Not Visible
+Name  : L'EXTRÊME Instant Extensions Lengthening Mascara
+Price : $25.00
+Stock : 1983
+URL   : https://automationteststore.com/index.php?rt=product/product&path=36_39&product_id=54
+
+
+Product added
+Name: The Miracle Morning: The Not-So-Obvious Secret Guaranteed to Transform Your Life
+Price: $16.20
+Stock: 9885860
+URL: https://automationteststore.com/index.php?rt=product/product&path=65_67&product_id=112
+
+

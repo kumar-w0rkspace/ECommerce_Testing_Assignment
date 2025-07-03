@@ -5,7 +5,7 @@
   <test name="FireFoxTest">
   <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="tests.TC001_Homepage_CategoryVerification"/>
+      <class name="tests.FullFlow"/>
     </classes>
   </test> <!-- Test -->
 
@@ -13,7 +13,7 @@
    <test name="ChromeTest">
   <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="tests.TC001_Homepage_CategoryVerification"/>
+      <class name="tests.FullFlow"/>
     </classes>
   </test> <!-- Test -->
 
@@ -21,7 +21,7 @@
    <test name="EdgeTest">
   <parameter name="browser" value="edge"/>
     <classes>
-      <class name="tests.TC001_Homepage_CategoryVerification"/>
+      <class name="tests.FullFlow"/>
     </classes>
   </test> <!-- Test -->
   
