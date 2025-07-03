@@ -13,6 +13,8 @@ bin/
 Thumbs.db
 
 # === Logs and Reports ===
+logs/
+*.log
 *.tmp
 *.bak
 *.swp
