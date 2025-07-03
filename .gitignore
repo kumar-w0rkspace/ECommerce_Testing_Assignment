@@ -8,28 +8,18 @@ target/
 .settings/
 bin/
 
-# === IntelliJ IDEA (optional) ===
-.idea/
-*.iml
-out/
-
 # === OS-Specific ===
 .DS_Store
 Thumbs.db
 
 # === Logs and Reports ===
-logs/
-*.log
 *.tmp
 *.bak
 *.swp
 *.swo
 *.orig
-*.txt
-report.txt
 
-# === Screenshot Captures ===
-screenshots/
+
 
 # === TestNG Output ===
 test-output/
