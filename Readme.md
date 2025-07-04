@@ -77,6 +77,7 @@ The assignment provided a real-world scenario involving:
 
 ## 📂 Project Structure
 ---
+
 ├── src
 │ ├── main
 │ │ └── java
@@ -90,6 +91,7 @@ The assignment provided a real-world scenario involving:
 ├── screenshots/    # Auto-captured error images
 └── testng.xml      # TestNG configuration
 └── demo-results    # Temporary testresult files, logs
+
 ---
 
 👨‍💻 Author
