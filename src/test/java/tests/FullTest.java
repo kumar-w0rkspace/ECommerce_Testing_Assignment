@@ -18,8 +18,9 @@ import pages.Products;
 import pages.Registration;
 import utils.CSVReaderUtility;
 import utils.ReportUtils;
+import utils.ScreenShotUtil;
 
-public class FullFlow extends BaseClass {
+public class FullTest extends BaseClass {
 	Home homePage;
 	Products productPage;
 	Cart cartpage;
@@ -39,6 +40,7 @@ public class FullFlow extends BaseClass {
 		homePage = new Home(driver);
 		List<String> text = homePage.getElementText();
 		log.info("*** Categories found: " + String.join(", ", text) + " ***");
+		ReportUtils.writeToReport("Categories found: " + String.join(", ", text));
 	}
 
 	@Test(priority = 2)
@@ -49,6 +51,7 @@ public class FullFlow extends BaseClass {
 		homePage.clickSubCategory();
 	}
 
+	@Test(priority = 3, dependsOnMethods = { "randomCategoryNavigation" })
 	public void verifyProductVisibility() {
 		log.info("*** Veryfing if three products are visible ***");
 		homePage = new Home(driver);
@@ -57,13 +60,14 @@ public class FullFlow extends BaseClass {
 			log.info("*** Category has " + productCount + " products ***");
 		} else {
 			log.error("Category has less than 3 products. Found: " + productCount);
+			ScreenShotUtil.captureImage(driver, "ProductCountLessThanThree");
 			myAssert.assertEquals(productCount, 3, "Category must have at least 3 products. Found: " + productCount);
 			myAssert.assertAll();
 		}
 
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 4, dependsOnMethods = { "randomCategoryNavigation" })
 	public void randomItemToCart() {
 		log.info("*** Adding two items to cart ***");
 		homePage = new Home(driver);
@@ -83,10 +87,12 @@ public class FullFlow extends BaseClass {
 				boolean cartVisible = productPage.cartButtonVisiblity();
 				if (stock.equalsIgnoreCase("Out of Stock") || stock.equalsIgnoreCase("Availability info not listed")) {
 					log.warn(">>> Product not added to cart - Reason: " + stock + " <<<");
+					ScreenShotUtil.captureImage(driver, stock);
 				} else if (!cartVisible) {
 					log.warn(">>> Product not added - Reason: Add to Cart button not visible or not enabled <<<");
 					ReportUtils.writeToReport("SKIPPED - Cart Button Not Visible\n" + "Name  : " + name + "\n"
 							+ "Price : " + price + "\n" + "Stock : " + stock + "\n" + "URL   : " + url + "\n\n");
+					ScreenShotUtil.captureImage(driver, "CartNotVisible");
 				} else {
 					productPage.clickCartButton();
 					addedCount++;
@@ -101,6 +107,7 @@ public class FullFlow extends BaseClass {
 
 			} catch (Exception e) {
 				log.error("Failed to add product: " + e.getMessage());
+				ScreenShotUtil.captureImage(driver, "ProductAddFailure");
 			} finally {
 				attempts++;
 			}
@@ -120,18 +127,20 @@ public class FullFlow extends BaseClass {
 		cartpage = new Cart(driver);
 		int itemCount = cartpage.getCartItemCount();
 		log.info("*** Cart contains " + (itemCount - 1) + " items ***");
-		Assert.assertEquals(itemCount >= 3, true, "Less than 2 items in inventory");
+		myAssert.assertEquals(itemCount >= 3, true, "Less than 2 items in inventory");
+		myAssert.assertAll();
 	}
 
 	@Test(priority = 6, dependsOnMethods = { "randomItemToCart" })
 	public void validateCartTotal() {
 		log.info("*** Validating cart total ***");
 		checkOut = new CheckOut(driver);
-		Assert.assertEquals(checkOut.getTotalPrice(), true, "Price Mismatch");
+		Assert.assertEquals(checkOut.getTotalPrice(), true, "Price mismatch");
 	}
 
 	@Test(priority = 7, dependsOnMethods = { "validateCartTotal" })
 	public void clickOnCheckOut() {
+		log.info("*** Clicking on Create New Account ***");
 		checkOut = new CheckOut(driver);
 		accLogin = new AccountLogin(driver);
 		checkOut.clickCheckOut();
@@ -140,9 +149,31 @@ public class FullFlow extends BaseClass {
 
 	@Test(priority = 8, dependsOnMethods = { "clickOnCheckOut" })
 	public void fillRegistrationForm() throws CsvValidationException {
+		log.info("*** Using testdata.csv to populate input fields ***");
 		Map<String, String> userData = CSVReaderUtility.readSingleUser("testdata.csv");
 		reg = new Registration(driver);
 		reg.fillRegistrationForm(userData);
-
 	}
+
+	@Test(priority = 9, dependsOnMethods = { "fillRegistrationForm" })
+	public void emptyingLastName() {
+		log.info("*** Removing last name and clicking continue ***");
+		reg = new Registration(driver);
+		reg.removeLastName();
+	}
+
+	@Test(priority = 10, dependsOnMethods = { "emptyingLastName" })
+	public void validatingErrorMsg() {
+		log.info("*** Checking for error alerts ***");
+		reg = new Registration(driver);
+		reg.clickContinue();
+		if (reg.isAlertPresent()) {
+			log.info(">>> Validation Alert is displayed: Error - " + reg.getAlertText() + " <<<");
+			ScreenShotUtil.captureImage(driver, "ValidationError");
+		} else {
+			log.warn(">>> No error alert was shown <<<");
+			Assert.fail("Validation alert not found");
+		}
+	}
+
 }

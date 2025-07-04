@@ -18,7 +18,7 @@ public class Products extends Base {
 	@FindBy(xpath = "//div[@class='productfilneprice']")
 	WebElement string_price;
 	@FindBy(xpath = "//ul[@class='productinfo']/li[span[text()='Availability:']]")
-	List<WebElement> string_availability;
+	private List<WebElement> string_availability;
 	@FindBy(xpath = "//a[@class='cart']")
 	WebElement btn_cart;
 
@@ -33,11 +33,11 @@ public class Products extends Base {
 	}
 
 	public String getQuantity() {
-		if (string_availability == null || string_availability.isEmpty()) {
+		if (getString_availability() == null || getString_availability().isEmpty()) {
 			return "Availability info not listed";
 		}
 
-		String availabilityText = string_availability.get(0).getText().trim().toLowerCase();
+		String availabilityText = getString_availability().get(0).getText().trim().toLowerCase();
 
 		if (availabilityText.isEmpty()) {
 			return "Availability info not listed";
@@ -70,4 +70,9 @@ public class Products extends Base {
 			return false;
 		}
 	}
+
+	public List<WebElement> getString_availability() {
+		return string_availability;
+	}
+
 }

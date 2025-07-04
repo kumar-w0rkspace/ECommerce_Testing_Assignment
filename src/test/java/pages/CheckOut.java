@@ -1,11 +1,8 @@
 package pages;
 
-import java.util.Random;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 public class CheckOut extends Base {
 
@@ -30,23 +27,15 @@ public class CheckOut extends Base {
 	WebElement select_zone;
 
 	public boolean getTotalPrice() {
-		double priceOne = Double.parseDouble(price_firstItem.getText().substring(1));
-		double priceTwo = Double.parseDouble(price_secondItem.getText().substring(1));
+		double priceOne = Double.parseDouble(price_firstItem.getText().replace(",", "").substring(1));
+		double priceTwo = Double.parseDouble(price_secondItem.getText().replace(",", "").substring(1));
 		double priceShipping = Double.parseDouble(price_shippingRate.getText().substring(1));
 		double priceTotal = Double.parseDouble(price_total.getText().substring(1));
-
 		return priceTotal == (priceOne + priceTwo + priceShipping);
 	}
 
 	public void clickCheckOut() {
-		/*Select myCountrySelect = new Select(select_country);
-		Random random = new Random();
-		myCountrySelect.selectByValue("99");
-		Select myStateSelect = new Select(select_zone);
-		int min = 1475;
-		int max = 1506;
-		int randomValue = random.nextInt(max - min + 1) + min;
-		myStateSelect.selectByValue(String.valueOf(randomValue)); */
+
 		btn_checkOut.click();
 	}
 }

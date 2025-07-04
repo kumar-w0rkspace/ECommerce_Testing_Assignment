@@ -48,6 +48,8 @@ public class Registration extends Base {
 	WebElement box_policyAgree;
 	@FindBy(xpath = "//button[@title='Continue']")
 	WebElement btn_continue;
+	@FindBy(xpath = "//div[contains(@class,'alert-danger')]")
+	WebElement error_Alert;
 
 	public void fillRegistrationForm(Map<String, String> data) {
 		txt_firstName.sendKeys(data.get("First Name"));
@@ -70,7 +72,26 @@ public class Registration extends Base {
 
 		rd_newsLetterYes.click();
 		box_policyAgree.click();
-		
+
 	}
 
+	public void removeLastName() {
+		txt_lastName.clear();
+	}
+
+	public boolean isAlertPresent() {
+		try {
+			return error_Alert.isDisplayed();
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public String getAlertText() {
+		return error_Alert.getText().trim();
+	}
+
+	public void clickContinue() {
+		btn_continue.click();
+	}
 }

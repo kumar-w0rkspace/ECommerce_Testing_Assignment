@@ -4,7 +4,7 @@
   <test thread-count="3" name="Test">
   <parameter name="browser" value="firefox" />
     <classes>
-      <class name="tests.FullFlow"/>
+      <class name="tests.FullTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

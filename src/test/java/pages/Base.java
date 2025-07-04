@@ -22,7 +22,7 @@ public class Base {
 	}
 
 	public void waitThenClickRandom(List<WebElement> elements, WebDriver driver) {
-		
+
 		if (elements == null || elements.isEmpty()) {
 			throw new RuntimeException("No elements found to click.");
 		}
