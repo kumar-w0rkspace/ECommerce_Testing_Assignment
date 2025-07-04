@@ -76,7 +76,7 @@ The assignment provided a real-world scenario involving:
 
 
 ## 📂 Project Structure
----
+```
 
 ├── src
 │ ├── main
@@ -92,7 +92,7 @@ The assignment provided a real-world scenario involving:
 └── testng.xml      # TestNG configuration
 └── demo-results    # Temporary testresult files, logs
 
----
+```
 
 👨‍💻 Author
 
