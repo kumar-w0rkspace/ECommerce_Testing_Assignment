@@ -72,7 +72,8 @@ The assignment provided a real-world scenario involving:
 - **Apache Commons IO** for file handling
 - **POM (Page Object Model)** architecture
 - **Custom Utility Classes** for reporting and screenshots
-
+---
+Usage of gitignore to declutter unnecessary files
 
 
 ## 📂 Project Structure
