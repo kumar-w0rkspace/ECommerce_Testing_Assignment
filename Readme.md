@@ -73,7 +73,9 @@ The assignment provided a real-world scenario involving:
 - **POM (Page Object Model)** architecture
 - **Custom Utility Classes** for reporting and screenshots
 ---
-Usage of gitignore to declutter unnecessary files
+> Usage of gitignore to declutter unnecessary files
+> Also included Sequential, Parallel test xml files
+
 
 
 ## 📂 Project Structure
