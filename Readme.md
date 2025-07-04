@@ -83,18 +83,18 @@ The assignment provided a real-world scenario involving:
 │ │ └── java
 │ │ ├── pages/      # Page Objects (POM)
 │ │ └── utils/      # Utilities (CSV, Screenshot, Report)
-│ └── test
+│ └── test  
 │ └── java
 │ └── tests/        # Full test execution (FullTest.java)
 ├── testdata.csv    # Dummy registration data
 ├── report.txt      # Runtime execution log
 ├── screenshots/    # Auto-captured error images
 └── testng.xml      # TestNG configuration
-└── demo-results    # Temporary testresult files, logs
+└── demo-results    # Temporary test result files, logs, screenshots
 
 ```
 
 👨‍💻 Author
 
-Kumar
+Kumar <br>
 Automation Testing | Java + Selenium | POM | TestNG | CSV-driven Testing
